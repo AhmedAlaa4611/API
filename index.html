@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- meta -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="online SpeechRecognition and SpeechSynthesisUtterance">
+
+        <!-- title -->
+        <title>My API Project</title>
+
+        <!-- link -->
+        <link href="img/Logo.ico" rel="icon">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- images -->
+        <div class="voice"><img src="img/cog-outline.svg"></div>
+        <div class="arabic"><img src="img/settings-outline.svg"></div>
+        <!-- dialog #1 -->
+        <dialog id="dialog_1">
+            <h2>select your voice</h2>
+            <!-- Male -->
+            <input id="radio_1" type="radio" name="voices" checked>
+            <label>Male&nbsp;&nbsp;&nbsp;</label>
+            <!-- Female -->
+            <input id="radio_2" type="radio" name="voices">
+            <label>Female&nbsp;&nbsp;&nbsp;</label>
+            <!-- Default -->
+            <input id="radio_3" type="radio" name="voices">
+            <label>Default</label><br>
+            <!-- button -->
+            <button id="Done">Done</button>
+        </dialog>
+        <!-- dialog #2 -->
+        <dialog id="dialog_2">
+            <h2> هل تريد تحوييل اللغه الى العربيه؟ </h2>
+            <button id="Yes"> نعم </button>
+            <button id="No"> لا </button>
+        </dialog>
+        <!-- main -->
+        <main>
+            <h1>voice to text API</h1>
+            <div class="text-area">
+                <textarea id="TextArea" placeholder="Type your text here."></textarea>
+                <img class="erase" src="img/close-outline.svg">
+            </div>
+            <div class="btns">
+                <button id="saye">Say your text</button>
+                <button id="read">Read text</button>
+                <button id="retext">Retext</button>
+                <button id="copy">Copy text</button>
+                <button id="download">Download as a text</button>
+            </div>
+        </main>
+        <!-- script -->
+        <script src="scripts/API.js"></script>
+        <script src="scripts/img_erase.js"></script>
+        <script src="scripts/img_voices.js"></script>
+        <script src="scripts/img_arabic.js"></script>
+    </body>
+</html>
+<!-- https://cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages -->
