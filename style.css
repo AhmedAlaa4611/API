@@ -12,6 +12,7 @@
     --text-color-hover: #474747;
     --text-selection: #4bcfff;
     --scrollbar-track-color: #afafaf;
+    --animation: animate 1s linear infinite;
 }
 
 body {
@@ -115,7 +116,9 @@ button:active {
 }
 
 /* imges */
-.voice, .arabic, .erase {
+.voice,
+.arabic,
+.erase {
     width: 30px;
     height: 30px;
     padding: 3px;
@@ -124,10 +127,11 @@ button:active {
 
 .erase {
     border-radius: 50%;
-    animation: animate 1s linear infinite;
+    animation: var(--animation);
 }
 
-.voice, .arabic {
+.voice,
+.arabic {
     position: fixed;
     left: 0;
     padding: 10px 10px 10px 15px;
@@ -142,29 +146,35 @@ button:active {
     top: 90px;
 }
 
-img:hover {
-    cursor: pointer;
-    animation: animate 1s linear infinite;
-}
-
 @keyframes animate {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(-360deg);
-	}
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
 }
 
-.voice:hover, .arabic:hover, .erase:hover {
+.voice:hover,
+.arabic:hover,
+.erase:hover {
     background: #AAB8C2;
+    cursor: pointer;
 }
 
-.voice:hover, .arabic:hover {
+.voice:hover,
+.arabic:hover {
     padding-left: 20px;
 }
 
-.voice:active, .arabic:active, .erase:active {
+.voice:hover img,
+.arabic:hover img {
+    animation: var(--animation);
+}
+
+.voice:active,
+.arabic:active,
+.erase:active {
     background: #EEE;
 }
 
@@ -174,6 +184,15 @@ dialog {
     text-align: center;
     border-radius: 5px;
     text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+dialog input {
+    accent-color: var(--bg-color);
+}
+
+dialog input:hover {
+    cursor: pointer;
 }
 
 dialog button {
@@ -181,7 +200,7 @@ dialog button {
 }
 
 #dialog_1 label {
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 @media (max-width: 576px) {
